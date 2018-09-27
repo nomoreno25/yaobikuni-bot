@@ -1,0 +1,11 @@
+{
+  "name": "Yao-Bikuni",
+  "version": "1.0.0",
+  "description": "My own Discord bot",
+  "main": "bot.js",
+  "author": "ChocolateBạcHà - Vườn Rau",
+  "dependencies": {
+    "discord.io": "github:woor/discord.io#gateway_v6",
+    "winston": "^3.0.0"
+  }
+}
