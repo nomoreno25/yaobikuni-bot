@@ -24,7 +24,7 @@ bot.on('ready', function (evt) {
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    if (message.substring(0, 1) == '?' && userID!='287777769826287617') {
+    if (message.substring(0, 1) == '?') {
         // Thêm .toLowerCase() để biến tất cả thành chữ thường, đỡ phải check hoa thường, mệt
         var args = message.substring(1).toLowerCase();
 
