@@ -11,7 +11,7 @@ var bot = new Discord.Client({
    autorun: true
 });
 bot.on('ready', function (evt) {
-    bot.setPresence( {game: {name:"gem dac' duoi? 1*"}} );
+    bot.setPresence( {game: {name:"Gem Dac' Duoi? 1*"}} );
     logger.info('Connected');
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
@@ -430,7 +430,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             });
             return;
         }
-        else if (args.includes("hououka") || args.includes("phụng")) {
+        else if (args.includes("hououka") || args.includes("phụng") || args.includes("phượng")) {
             bot.sendMessage({
                 to: channelID,
                 message: 'Đại nhân cần tìm: Hououka\nNgự hồn  - Tầng 7 có 1\nKappa​ - Tầng 5 có 1\nUbume​ - Tầng 4 có 1'
@@ -451,7 +451,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             });
             return;
         }
-        else if (args.includes("yumekui") || args.includes("thực mộng giả") || args.includes("heo ngủ") || args.includes("chuông") || args.includes("ác mộng")) {
+        else if (args.includes("yumekui") || args.includes("thực mộng") || args.includes("heo ngủ") || args.includes("chuông") || args.includes("ác mộng")) {
             bot.sendMessage({
                 to: channelID,
                 message: 'Đại nhân cần tìm: Yumekui\nChương 14​ - Norikabe cuối cùng có 1, Boss Yumekui có 5\nNgự hồn - tầng 4 có 2'
