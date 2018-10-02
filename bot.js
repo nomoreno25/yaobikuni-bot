@@ -11,6 +11,7 @@ var bot = new Discord.Client({
    autorun: true
 });
 bot.on('ready', function (evt) {
+    bot.setPresence( {game: {name:"gem dac' duoi? 1*"}} );
     logger.info('Connected');
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
