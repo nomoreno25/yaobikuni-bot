@@ -24,7 +24,16 @@ bot.on('ready', function (evt) {
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    if (message.substring(0, 1) == '?') {
+    // if (message.substring(0, 1) == '?' && channelID!='480337864887107594') {
+    //     var args = message.substring(1).toLowerCase();
+
+    //     bot.sendMessage({
+    //         to: channelID,
+    //         message: '<@207358398109450240> <@349480491730206721> đm có thằng spam sai kênh này đại nhân!'
+    //     });
+    //     return;
+    // }else
+    if (message.substring(0, 1) == '?' && channelID=='480337864887107594') {
         // Thêm .toLowerCase() để biến tất cả thành chữ thường, đỡ phải check hoa thường, mệt
         var args = message.substring(1).toLowerCase();
 
