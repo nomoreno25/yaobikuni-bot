@@ -11,7 +11,7 @@ var bot = new Discord.Client({
    autorun: true
 });
 bot.on('ready', function (evt) {
-    bot.setPresence( {game: {name:"Gem Dac' Duoi? 1*"}} );
+    bot.setPresence( {game: {name:"quest: help"}} );
     logger.info('Connected');
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
@@ -24,24 +24,28 @@ bot.on('ready', function (evt) {
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    // if (message.substring(0, 1) == '?' && channelID!='480337864887107594') {
-    //     var args = message.substring(1).toLowerCase();
+    if (message.substring(0, 6) == 'quest:' && channelID!='480337864887107594') {
+        var args = message.substring(6).toLowerCase();
 
-    //     bot.sendMessage({
-    //         to: channelID,
-    //         message: '<@207358398109450240> <@349480491730206721> đm có thằng spam sai kênh này đại nhân!'
-    //     });
-    //     return;
-    // }else
-    if (message.substring(0, 1) == '?' && channelID=='480337864887107594') {
-        // Thêm .toLowerCase() để biến tất cả thành chữ thường, đỡ phải check hoa thường, mệt
-        var args = message.substring(1).toLowerCase();
+        bot.sendMessage({
+            to: channelID,
+            message: '<@207358398109450240> <@349480491730206721> đm có thằng spam sai kênh này đại nhân!\nĐây này đm thằng <@' + userID + '> spam này.'
+        });
+        return;
+    }else
+
+    if (message.substring(0, 6) == 'quest:' && channelID=='480337864887107594') {
+        //Thêm .toLowerCase() để biến tất cả thành chữ thường, đỡ phải check hoa thường, mệt
+        var args = message.substring(6).toLowerCase();
+        var voiceChannelId = '450158820698619905';
+
+        //Chuc nang nghe nhac
 
         // VD: "!Tìm kiếm"
         if (args.includes("help")) {
             bot.sendMessage({
                 to: channelID,
-                message: 'Chào đại nhân, ta ở đây để hỗ trợ làm truy hoặc tìm người yêu/crush.\nGõ ?+tên thức thần hoặc ?+tip để tìm thông tin nhé.'
+                message: 'Chào đại nhân, ta ở đây để hỗ trợ làm truy hoặc tìm người yêu/crush.\nGõ quest: tên thức thần hoặc quest: tip để tìm thông tin nhé.'
             });
             return;
         } 
